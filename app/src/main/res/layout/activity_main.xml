@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity">
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="set"
+        android:id="@+id/setButton"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/prefNameIn"
+        android:layout_alignBottom="@+id/setButton"
+        android:layout_toEndOf="@+id/setButton"
+        android:width="100dp"
+        android:text="name1" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="="
+        android:id="@+id/textView"
+        android:layout_alignBottom="@+id/prefNameIn"
+        android:layout_toStartOf="@+id/prefValIn"
+        android:layout_marginEnd="28dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/prefValIn"
+        android:width="100dp"
+        android:layout_alignBottom="@+id/textView"
+        android:layout_alignParentEnd="true"
+        android:text="val1" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/prefNameOut"
+        android:layout_below="@+id/setButton"
+        android:layout_toEndOf="@+id/setButton"
+        android:layout_marginTop="50dp"
+        android:width="100dp"
+        android:text="name1" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="get"
+        android:id="@+id/getButton"
+        android:layout_alignBottom="@+id/prefNameOut"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="none"
+        android:id="@+id/prefValOut"
+        android:layout_alignBottom="@+id/prefNameOut"
+        android:layout_alignEnd="@+id/prefValIn"
+        android:width="100dp" />
+
+</RelativeLayout>
