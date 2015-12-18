@@ -9,6 +9,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
+//preferenceファイルにname, valueをセットして、その内容を読みだすテスト
 
 public class MainActivity extends AppCompatActivity {
     private static String PREFFILE_NAME = "my_data_xxx";
@@ -61,7 +64,10 @@ public class MainActivity extends AppCompatActivity {
         dataStore = getSharedPreferences(PREFFILE_NAME, MODE_PRIVATE);;
         SharedPreferences.Editor editor = dataStore.edit();
         editor.putString(name, val);
-        editor.commit();
+        boolean ret = editor.commit();
+        Log.d(tag, "set to preference result=" + Boolean.toString(ret));
+
+        Toast.makeText(this, "set to preference result=" + Boolean.toString(ret), Toast.LENGTH_LONG).show();
     }
 
     String getStringPreference(String name) {
@@ -70,9 +76,10 @@ public class MainActivity extends AppCompatActivity {
             Log.e(tag, "ERROR: preference is null");
         }
         String str = dataStore.getString(name, "Nothing");
-        if(!str.equals("Nothing")) {
+        if(str.equals("Nothing")) {
 //            str = "";
             Log.e(tag, "ERROR: preference name is not set");
+            Toast.makeText(this, "get from preference error", Toast.LENGTH_LONG).show();
         }
         return str;
     }
